@@ -1,9 +1,16 @@
-function love.draw()
-	love.graphics.setColor(0, 255, 0, 255)
-	love.graphics.print("This is a pretty cool example.", 10, 200)
-	love.graphics.setColor(255, 0, 0, 255)
-	love.graphics.print("This lame example is twice as big.", 10, 250, 0, 2, 2)
-	love.graphics.setColor(0, 0, 255, 255)
-	love.graphics.print("This example is lamely vertical.", 300, 30, math.pi/2)
-	love.graphics.print("This example is lamely tacked on at the end", 10, 300)
+function love.load( arg )
+
 end
+
+function love.update( dt )
+
+end
+
+function love.draw()
+
+end
+
+function love.resize( w, h )
+    print( "Resized: " .. w .. ", " .. h )
+end
+

@@ -47,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67EF23B2E36DC2A7597970C9 /* conf.lua */ = {isa = PBXFileReference; lastKnownFileType = file.lua; path = conf.lua; sourceTree = "<group>"; };
+		67EF2658F818AEE0F6C43FA7 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../Makefile; sourceTree = "<group>"; };
 		9490367619EC62310068735A /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = "../../../../Library/Developer/Xcode/DerivedData/love-ddpwgtogtptfvueaxzgcbylzkdnu/Build/Products/Debug-iphoneos/libSDL2.a"; sourceTree = "<group>"; };
 		9490367B19EC65350068735A /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TemplateIcon2x.png; path = ../../../TemplateIcon2x.png; sourceTree = "<group>"; };
 		9490368019EC686B0068735A /* main.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				9490368019EC686B0068735A /* main.lua */,
+				67EF23B2E36DC2A7597970C9 /* conf.lua */,
 			);
 			name = game;
 			path = ../../game;
@@ -142,6 +145,7 @@
 			children = (
 				9490367F19EC686B0068735A /* game */,
 				9490367919EC64DF0068735A /* ext */,
+				67EF2658F818AEE0F6C43FA7 /* Makefile */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -300,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -rf ../../build/diorama.love\ncd ../../game\nzip -9 -q -r ../build/diorama.love .";
+			shellScript = "cd ../../\nmake build";
 		};
 /* End PBXShellScriptBuildPhase section */
 
