@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		9490367519EC62300068735A /* liblove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9490367219EC615F0068735A /* liblove.a */; };
 		9490367719EC62310068735A /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9490367619EC62310068735A /* libSDL2.a */; };
-		9490367D19EC65350068735A /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9490367B19EC65350068735A /* TemplateIcon2x.png */; };
 		9490368219EC68A60068735A /* diorama.love in Resources */ = {isa = PBXBuildFile; fileRef = 9490368119EC68A60068735A /* diorama.love */; };
+		94AC923019EDA10000B52694 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9490367B19EC65350068735A /* TemplateIcon2x.png */; };
 		FA0490CE19415B7700261551 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0490CD19415B7700261551 /* libz.dylib */; };
 		FA0C65731948EC6000375A11 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0C65721948EC6000375A11 /* CoreMotion.framework */; };
 		FA368CC2194D4A9D00068EAB /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA368CC0194D4A9D00068EAB /* libluajit.a */; };
@@ -47,11 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		67EF23B2E36DC2A7597970C9 /* conf.lua */ = {isa = PBXFileReference; lastKnownFileType = file.lua; path = conf.lua; sourceTree = "<group>"; };
-		67EF2658F818AEE0F6C43FA7 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../Makefile; sourceTree = "<group>"; };
 		9490367619EC62310068735A /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = "../../../../Library/Developer/Xcode/DerivedData/love-ddpwgtogtptfvueaxzgcbylzkdnu/Build/Products/Debug-iphoneos/libSDL2.a"; sourceTree = "<group>"; };
-		9490367B19EC65350068735A /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TemplateIcon2x.png; path = ../../../TemplateIcon2x.png; sourceTree = "<group>"; };
-		9490368019EC686B0068735A /* main.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; };
+		9490367B19EC65350068735A /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
 		9490368119EC68A60068735A /* diorama.love */ = {isa = PBXFileReference; lastKnownFileType = file; name = diorama.love; path = ../../../build/diorama.love; sourceTree = "<group>"; };
 		FA0490CD19415B7700261551 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FA0C65721948EC6000375A11 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -107,30 +104,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9490367919EC64DF0068735A /* ext */ = {
-			isa = PBXGroup;
-			children = (
-				FA84B5CF1846C74B00A0961B /* LoveSource */,
-				FA84B20618469EBA00A0961B /* Supporting Files */,
-				FA84B1FE18469EB900A0961B /* Frameworks */,
-				FA84B5D41846CDA600A0961B /* Libraries */,
-				FA84B1FD18469EB900A0961B /* Products */,
-				FA84B21118469EBA00A0961B /* Images.xcassets */,
-				FA84B23218469FBE00A0961B /* liblove.xcodeproj */,
-			);
-			name = ext;
-			sourceTree = "<group>";
-		};
-		9490367F19EC686B0068735A /* game */ = {
-			isa = PBXGroup;
-			children = (
-				9490368019EC686B0068735A /* main.lua */,
-				67EF23B2E36DC2A7597970C9 /* conf.lua */,
-			);
-			name = game;
-			path = ../../game;
-			sourceTree = "<group>";
-		};
 		FA368CC1194D4A9D00068EAB /* luajit */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +116,13 @@
 		FA84B1F318469EB900A0961B = {
 			isa = PBXGroup;
 			children = (
-				9490367F19EC686B0068735A /* game */,
-				9490367919EC64DF0068735A /* ext */,
-				67EF2658F818AEE0F6C43FA7 /* Makefile */,
+				FA84B5CF1846C74B00A0961B /* LoveSource */,
+				FA84B20618469EBA00A0961B /* Supporting Files */,
+				FA84B1FE18469EB900A0961B /* Frameworks */,
+				FA84B5D41846CDA600A0961B /* Libraries */,
+				FA84B1FD18469EB900A0961B /* Products */,
+				FA84B21118469EBA00A0961B /* Images.xcassets */,
+				FA84B23218469FBE00A0961B /* liblove.xcodeproj */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -281,7 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9490367D19EC65350068735A /* TemplateIcon2x.png in Resources */,
+				94AC923019EDA10000B52694 /* TemplateIcon2x.png in Resources */,
 				FA84B20A18469EBA00A0961B /* InfoPlist.strings in Resources */,
 				FA753A6C19183330000002B3 /* LoveDocument.icns in Resources */,
 				FA84B21218469EBA00A0961B /* Images.xcassets in Resources */,

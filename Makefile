@@ -1,7 +1,10 @@
 BUILD_DIR = build
 SRC_DIR = game
 
-.PHONY: build clean
+.PHONY: run build clean
+
+run:
+	love $(SRC_DIR)
 
 build: $(BUILD_DIR)/diorama.love
 
