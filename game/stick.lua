@@ -17,7 +17,7 @@ end
 function Stick.loadMesh()
     local texture = love.graphics.newImage( "gfx/stick.png" )
     local tint = { 244, 225, 175, }
-    local size = { 48, 512 }
+    local size = { love.graphics.getWidth() * 0.046875, love.graphics.getHeight() * 0.66667 }
     local coords = {
         left = 0,
         right = size[1],

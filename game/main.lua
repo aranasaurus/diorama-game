@@ -3,15 +3,6 @@ require( "stick" )
 local sticks = {}
 
 function love.load( arg )
-    if love.window.isTouchScreen( 0 ) then
-        love.window.setMode( 0, 0, {
-            fullscreen = true,
-        } )
-    else
-        love.window.setMode( 1024, 768, {
-            resizable = true
-        } ) 
-    end
     Stick.loadMesh()
     table.insert(sticks, Stick:new( love.graphics.getWidth()/2, love.graphics.getHeight()/2 ) )
 end
