@@ -1,37 +1,33 @@
 require( "stick" )
 
-local sticks = {}
+local stick = {}
 
 function love.load( arg )
     Stick.loadMesh()
-    table.insert(sticks, Stick:new( love.graphics.getWidth()/2, love.graphics.getHeight()/2 ) )
+    stick = Stick:new( love.graphics.getWidth()/2, love.graphics.getHeight()/2 )
 end
 
 function love.update( dt )
-    for _, stick in pairs(sticks) do
-        stick:update()
-    end
+    stick:update()
 end
 
 function love.draw()
-    for _, stick in pairs(sticks) do
-        stick:draw()
+    stick:draw()
+    if stick.debugText ~= nil then
+        local w, h = love.graphics.getDimensions()
+        local f = love.graphics.getFont()
+        local scl = 2
+        local lines = 2
+        love.graphics.setColor( 255, 255, 255, 255 * 0.66 )
+        love.graphics.printf( stick.debugText, 0, h - f:getHeight()*lines*scl, w/scl, "left", 0, scl, scl )
     end
-end
-
-function love.resize( w, h )
-    print( "Resized: " .. w .. ", " .. h )
 end
 
 function love.mousepressed( x, y, button, isTouch )
-    for _, stick in pairs(sticks) do
-        stick:mousepressed( x, y, button, isTouch )
-    end
+    stick:mousepressed( x, y, button, isTouch )
 end
 
 function love.mousereleased( x, y, button, isTouch )
-    for _, stick in pairs(sticks) do
-        stick:mousereleased( x, y, button, isTouch )
-    end
+    stick:mousereleased( x, y, button, isTouch )
 end
 

@@ -1,5 +1,7 @@
 Stick = {}
 
+local DEAD_ZONE = 2
+
 function Stick:new( x, y )
     local s = {}
     setmetatable( s, self )
@@ -10,6 +12,7 @@ function Stick:new( x, y )
     s.controller = controller
     s.grabbed = false
     s.touchOffset = { 0, 0 }
+    s.touchID = -1
     s.dir = 1
 
     return s
@@ -62,41 +65,65 @@ end
 function Stick:draw()
     love.graphics.push()
     if self.grabbed then
-        local offsetX = self.x + self.touchOffset[1]
-        local offsetY = self.y + self.touchOffset[2]
-        love.graphics.translate( offsetX, offsetY )
+        local touchPoint = {
+            self.x + self.touchOffset[1],
+            self.y + self.touchOffset[2],
+        }
+        love.graphics.translate( touchPoint[1], touchPoint[2] )
         love.graphics.rotate( self.dir * math.pi/16 )
-        love.graphics.translate( -offsetX, -offsetY )
-        love.graphics.translate( -self.dir * (self.touchOffset[2]/(self.h/2)) * 100, 0 )
+        love.graphics.translate( -touchPoint[1], -touchPoint[2] )
     end
     love.graphics.draw( self.mesh, self.x, self.y )
     love.graphics.pop()
 end
 
 function Stick:update()
-    if self.grabbed then
-        local prevX = self.x
-        self.x = love.mouse.getX() + self.touchOffset[1]
-        self.y = love.mouse.getY() + self.touchOffset[2]
-        if self.x - prevX < -2 then
-            self.dir = -1
-        elseif self.x - prevX > 2 then
-            self.dir = 1
+    local id
+    local x
+    local y
+    local pressure
+    local found = false
+
+    for i=1, love.touch.getTouchCount() do
+        id, x, y, pressure = love.touch.getTouch( i )
+        if id == self.touchId then
+            found = true
+            break
         end
     end
+
+    if not found then
+        x, y = love.mouse.getX(), love.mouse.getY()
+    end
+
+    self:handleMovement( x, y )
 end
 
 function Stick:isInside( x, y )
     return math.abs( self.x - x ) <= self.w/2 and math.abs( self.y - y ) <= self.h/2
 end
 
+function Stick:handleMovement( x, y )
+    if self.grabbed then
+        local prevX = self.x
+        self.x = x + self.touchOffset[1]
+        self.y = y - self.touchOffset[2]
+        if self.x - prevX < -DEAD_ZONE then
+            self.dir = -1
+        elseif self.x - prevX > DEAD_ZONE then
+            self.dir = 1
+        end
+    end
+end
+
 function Stick:mousepressed( x, y, button, isTouch )
     self.grabbed = self:isInside( x, y )
     if self.grabbed then
-        self.touchOffset[1] = self.x - x
-        self.touchOffset[2] = self.y - y
+        self.touchOffset[1] = (self.x - x)
+        self.touchOffset[2] = (-self.y + y)
         self.dir = 0
     end
+    self.debugText = "offsetX: " .. self.touchOffset[1] .. "\noffsetY: " .. self.touchOffset[2]
 end
 
 function Stick:mousereleased( x, y, button, isTouch )
@@ -107,9 +134,3 @@ function Stick:mousereleased( x, y, button, isTouch )
     end
 end
 
-function Stick:touchmoved( id, x, y, pressure )
-    if self.grabbed then
-        self.x = x + self.touchOffset[1]
-        self.y = y + self.touchOffset[2]
-    end
-end
