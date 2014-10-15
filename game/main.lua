@@ -19,8 +19,9 @@ function love.draw()
         local scl = 2 * love.window.getPixelScale()
         local lines = 4
         love.graphics.setColor( 255, 255, 255, 255 * 0.66 )
-        love.graphics.printf( stick.debugText, 0, h - f:getHeight()*lines*scl, w/scl, "left", 0, scl, scl )
+        love.graphics.printf( stick.debugText, 10, h - f:getHeight()*lines*scl, w/scl, "left", 0, scl, scl )
     end
+    love.graphics.print( "FPS: " .. love.timer.getFPS(), 10, 10, 0, love.window.getPixelScale(), love.window.getPixelScale() )
 end
 
 function love.mousepressed( x, y, button, isTouch )

@@ -1,3 +1,5 @@
+require( "ship" )
+
 Stick = {}
 
 local DEAD_ZONE = 0
@@ -20,6 +22,10 @@ function Stick:new( x, y )
     s.resetDir = false
     s.resetDirTime = 0
 
+    local shipImage = love.graphics.newImage( "gfx/ship.png" )
+    local verts = Ship.getVerts( shipImage, self.w * 5.0, self.h/4 )
+    s.ship = Ship:newShip( shipImage, verts )
+
     return s
 end
 
@@ -29,7 +35,7 @@ end
 function Stick.loadMesh()
     local texture = love.graphics.newImage( "gfx/stick.png" )
     local tint = { 255, 205, 135, }
-    local size = { love.graphics.getWidth() * 0.046875, love.graphics.getHeight() * 0.66667 }
+    local size = { love.graphics.getWidth() * 0.028, love.graphics.getHeight() * 0.5 }
     -- coords assumes the x/y in the draw method will be at the center of the mesh
     local coords = {
         left = -size[1]/2,
@@ -88,6 +94,12 @@ function Stick:draw()
     end
 
     love.graphics.draw( self.mesh, self.x, self.y )
+    -- draw the ship up top
+    love.graphics.translate( self.x, self.y - self.h/2 )
+    if self.dir < 0 then
+        love.graphics.scale( -1, 1 )
+    end
+    self.ship:draw()
     love.graphics.pop()
 end
 
