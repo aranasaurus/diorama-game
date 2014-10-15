@@ -8,7 +8,7 @@ function love.load( arg )
 end
 
 function love.update( dt )
-    stick:update()
+    stick:update( dt )
 end
 
 function love.draw()
@@ -16,8 +16,8 @@ function love.draw()
     if stick.debugText ~= nil then
         local w, h = love.graphics.getDimensions()
         local f = love.graphics.getFont()
-        local scl = 2
-        local lines = 2
+        local scl = 2 * love.window.getPixelScale()
+        local lines = 4
         love.graphics.setColor( 255, 255, 255, 255 * 0.66 )
         love.graphics.printf( stick.debugText, 0, h - f:getHeight()*lines*scl, w/scl, "left", 0, scl, scl )
     end

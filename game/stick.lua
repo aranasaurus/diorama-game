@@ -1,7 +1,8 @@
 Stick = {}
 
-local DEAD_ZONE = 2
+local DEAD_ZONE = 0
 local MAX_TILT = math.pi/16
+local TILT_TIMEOUT = 0.08
 
 -- new returns a new Stick object centered at x/y
 function Stick:new( x, y )
@@ -14,7 +15,10 @@ function Stick:new( x, y )
     s.grabbed = false
     s.touchOffset = { 0, 0 }
     s.touchID = -1
-    s.dir = 1
+    s.dir = 0
+    s.t = 0
+    s.resetDir = false
+    s.resetDirTime = 0
 
     return s
 end
@@ -87,7 +91,9 @@ function Stick:draw()
     love.graphics.pop()
 end
 
-function Stick:update()
+function Stick:update( dt )
+    self.t = self.t + dt
+
     local id
     local x
     local y
@@ -109,6 +115,11 @@ function Stick:update()
     end
 
     self:handleMovement( x, y )
+
+    if self.resetDir and self.t > self.resetDirTime then
+        self.dir = 0
+        self.resetDir = false
+    end
 end
 
 -- isInside checks if a given world coordinate is inside the stick's hitbox
@@ -125,10 +136,16 @@ function Stick:handleMovement( x, y )
         local prevX = self.x
         self.x = x + self.touchOffset[1]
         self.y = y - self.touchOffset[2]
-        if self.x - prevX < -DEAD_ZONE then
+        local dx = self.x - prevX
+        if dx < -DEAD_ZONE then
             self.dir = -1
-        elseif self.x - prevX > DEAD_ZONE then
+            self.resetDir = false
+        elseif dx > DEAD_ZONE then
             self.dir = 1
+            self.resetDir = false
+        elseif not self.resetDir and self.dir ~= 0 then
+            self.resetDir = true
+            self.resetDirTime = self.t + TILT_TIMEOUT
         end
     end
 end
@@ -143,10 +160,11 @@ function Stick:mousepressed( x, y, button, isTouch )
 end
 
 function Stick:mousereleased( x, y, button, isTouch )
+    self.grabbed = false
     if self.grabbed then
-        self.grabbed = false
         self.touchOffset[1] = 0
         self.touchOffset[2] = 0
+        self.dir = 0
     end
 end
 
