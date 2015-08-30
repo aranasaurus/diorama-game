@@ -21,13 +21,7 @@ class GameScene: SKScene {
             let location = touch.locationInNode(self)
             
             let sprite = SKSpriteNode(texture: stickTexture)
-            
-            sprite.xScale = 0.15
-            sprite.yScale = 0.35
             sprite.position = location
-            sprite.color = UIColor(hue: 0.1095, saturation: 0.8329, brightness: 1, alpha: 1)
-            sprite.colorBlendFactor = 0.8
-            
             self.addChild(sprite)
         }
     }
