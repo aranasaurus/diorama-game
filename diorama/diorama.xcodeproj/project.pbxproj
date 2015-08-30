@@ -15,6 +15,8 @@
 		9487F4B61B8D770F00EB9459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9487F4B51B8D770F00EB9459 /* Assets.xcassets */; };
 		9487F4B91B8D770F00EB9459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9487F4B71B8D770F00EB9459 /* LaunchScreen.storyboard */; };
 		9487F4C41B8D770F00EB9459 /* dioramaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9487F4C31B8D770F00EB9459 /* dioramaTests.swift */; };
+		94998EE11B9369A90094C0DB /* rswift in Resources */ = {isa = PBXBuildFile; fileRef = 94998EE01B9369A90094C0DB /* rswift */; settings = {ASSET_TAGS = (); }; };
+		94998EE41B9370310094C0DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94998EE31B9370310094C0DB /* R.generated.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +31,10 @@
 
 /* Begin PBXFileReference section */
 		9487F4A71B8D770F00EB9459 /* diorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9487F4AA1B8D770F00EB9459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9487F4AA1B8D770F00EB9459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = src/AppDelegate.swift; sourceTree = "<group>"; };
 		9487F4AC1B8D770F00EB9459 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		9487F4AE1B8D770F00EB9459 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		9487F4B01B8D770F00EB9459 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9487F4B01B8D770F00EB9459 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = src/GameViewController.swift; sourceTree = "<group>"; };
 		9487F4B31B8D770F00EB9459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9487F4B51B8D770F00EB9459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9487F4B81B8D770F00EB9459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		9487F4BF1B8D770F00EB9459 /* dioramaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dioramaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9487F4C31B8D770F00EB9459 /* dioramaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dioramaTests.swift; sourceTree = "<group>"; };
 		9487F4C51B8D770F00EB9459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94998EE01B9369A90094C0DB /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = rswift; path = ../rswift; sourceTree = "<group>"; };
+		94998EE31B9370310094C0DB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +85,10 @@
 		9487F4A91B8D770F00EB9459 /* diorama */ = {
 			isa = PBXGroup;
 			children = (
+				94998EDE1B9368A50094C0DB /* scenes */,
 				9487F4AA1B8D770F00EB9459 /* AppDelegate.swift */,
-				9487F4AC1B8D770F00EB9459 /* GameScene.sks */,
-				9487F4AE1B8D770F00EB9459 /* GameScene.swift */,
 				9487F4B01B8D770F00EB9459 /* GameViewController.swift */,
-				9487F4B21B8D770F00EB9459 /* Main.storyboard */,
-				9487F4B51B8D770F00EB9459 /* Assets.xcassets */,
-				9487F4B71B8D770F00EB9459 /* LaunchScreen.storyboard */,
-				9487F4BA1B8D770F00EB9459 /* Info.plist */,
+				94998EDF1B9369510094C0DB /* Supporting Files */,
 			);
 			path = diorama;
 			sourceTree = "<group>";
@@ -102,6 +102,29 @@
 			path = dioramaTests;
 			sourceTree = "<group>";
 		};
+		94998EDE1B9368A50094C0DB /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9487F4AC1B8D770F00EB9459 /* GameScene.sks */,
+				9487F4AE1B8D770F00EB9459 /* GameScene.swift */,
+			);
+			name = scenes;
+			path = src/scenes;
+			sourceTree = "<group>";
+		};
+		94998EDF1B9369510094C0DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94998EE31B9370310094C0DB /* R.generated.swift */,
+				94998EE01B9369A90094C0DB /* rswift */,
+				9487F4B21B8D770F00EB9459 /* Main.storyboard */,
+				9487F4B51B8D770F00EB9459 /* Assets.xcassets */,
+				9487F4B71B8D770F00EB9459 /* LaunchScreen.storyboard */,
+				9487F4BA1B8D770F00EB9459 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9487F4C81B8D770F00EB9459 /* Build configuration list for PBXNativeTarget "diorama" */;
 			buildPhases = (
+				94998EE21B9369B40094C0DB /* Generate R.swift */,
 				9487F4A31B8D770F00EB9459 /* Sources */,
 				9487F4A41B8D770F00EB9459 /* Frameworks */,
 				9487F4A51B8D770F00EB9459 /* Resources */,
@@ -183,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94998EE11B9369A90094C0DB /* rswift in Resources */,
 				9487F4AD1B8D770F00EB9459 /* GameScene.sks in Resources */,
 				9487F4B91B8D770F00EB9459 /* LaunchScreen.storyboard in Resources */,
 				9487F4B61B8D770F00EB9459 /* Assets.xcassets in Resources */,
@@ -199,6 +224,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94998EE21B9369B40094C0DB /* Generate R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate R.swift";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" \"$SRCROOT\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9487F4A31B8D770F00EB9459 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -207,6 +249,7 @@
 				9487F4AF1B8D770F00EB9459 /* GameScene.swift in Sources */,
 				9487F4B11B8D770F00EB9459 /* GameViewController.swift in Sources */,
 				9487F4AB1B8D770F00EB9459 /* AppDelegate.swift in Sources */,
+				94998EE41B9370310094C0DB /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +446,7 @@
 				9487F4CA1B8D770F00EB9459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9487F4CB1B8D770F00EB9459 /* Build configuration list for PBXNativeTarget "dioramaTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +455,7 @@
 				9487F4CD1B8D770F00EB9459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
