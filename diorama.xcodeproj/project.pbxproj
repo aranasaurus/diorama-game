@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		943A661C1BADF1B30060E8CD /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943A661B1BADF1B30060E8CD /* SharedAssets.xcassets */; };
+		943A66241BADF2F20060E8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943A66231BADF2F20060E8CD /* AppDelegate.swift */; };
+		943A66281BADF2F20060E8CD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943A66271BADF2F20060E8CD /* GameViewController.swift */; };
+		943A662D1BADF2F20060E8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943A662B1BADF2F20060E8CD /* Main.storyboard */; };
+		943A662F1BADF2F20060E8CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943A662E1BADF2F20060E8CD /* Assets.xcassets */; };
+		943A66341BADF3440060E8CD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9487F4AC1B8D770F00EB9459 /* GameScene.sks */; };
+		943A66351BADF3440060E8CD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9487F4AE1B8D770F00EB9459 /* GameScene.swift */; };
+		943A66361BADF3440060E8CD /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943A661B1BADF1B30060E8CD /* SharedAssets.xcassets */; };
 		944083F41BADEDF10021B93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944083F31BADEDF10021B93C /* AppDelegate.swift */; };
 		944083FA1BADEDF10021B93C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944083F91BADEDF10021B93C /* GameViewController.swift */; };
 		944083FD1BADEDF10021B93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944083FB1BADEDF10021B93C /* Main.storyboard */; };
@@ -20,6 +27,12 @@
 
 /* Begin PBXFileReference section */
 		943A661B1BADF1B30060E8CD /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
+		943A66211BADF2F20060E8CD /* Diorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		943A66231BADF2F20060E8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		943A66271BADF2F20060E8CD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		943A662C1BADF2F20060E8CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		943A662E1BADF2F20060E8CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		943A66301BADF2F20060E8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944083F11BADEDF10021B93C /* Diorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944083F31BADEDF10021B93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944083F91BADEDF10021B93C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		943A661E1BADF2F20060E8CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		944083EE1BADEDF10021B93C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,6 +62,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943A66221BADF2F20060E8CD /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				943A66231BADF2F20060E8CD /* AppDelegate.swift */,
+				943A66271BADF2F20060E8CD /* GameViewController.swift */,
+				943A662B1BADF2F20060E8CD /* Main.storyboard */,
+				943A662E1BADF2F20060E8CD /* Assets.xcassets */,
+				943A66301BADF2F20060E8CD /* Info.plist */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		944083EC1BADEB790021B93C /* shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +101,7 @@
 			children = (
 				944083EC1BADEB790021B93C /* shared */,
 				944083F21BADEDF10021B93C /* ios */,
+				943A66221BADF2F20060E8CD /* tvOS */,
 				9487F4A81B8D770F00EB9459 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				944083F11BADEDF10021B93C /* Diorama.app */,
+				943A66211BADF2F20060E8CD /* Diorama.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,9 +127,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		944083F01BADEDF10021B93C /* ios */ = {
+		943A66201BADF2F20060E8CD /* tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 944084041BADEDF10021B93C /* Build configuration list for PBXNativeTarget "ios" */;
+			buildConfigurationList = 943A66311BADF2F20060E8CD /* Build configuration list for PBXNativeTarget "tvOS" */;
+			buildPhases = (
+				943A661D1BADF2F20060E8CD /* Sources */,
+				943A661E1BADF2F20060E8CD /* Frameworks */,
+				943A661F1BADF2F20060E8CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tvOS;
+			productName = Diorama;
+			productReference = 943A66211BADF2F20060E8CD /* Diorama.app */;
+			productType = "com.apple.product-type.application";
+		};
+		944083F01BADEDF10021B93C /* iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 944084041BADEDF10021B93C /* Build configuration list for PBXNativeTarget "iOS" */;
 			buildPhases = (
 				944083ED1BADEDF10021B93C /* Sources */,
 				944083EE1BADEDF10021B93C /* Frameworks */,
@@ -105,7 +156,7 @@
 			);
 			dependencies = (
 			);
-			name = ios;
+			name = iOS;
 			productName = Diorama;
 			productReference = 944083F11BADEDF10021B93C /* Diorama.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +171,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "OK, Robot Studios";
 				TargetAttributes = {
+					943A66201BADF2F20060E8CD = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					944083F01BADEDF10021B93C = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -138,12 +192,24 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				944083F01BADEDF10021B93C /* ios */,
+				944083F01BADEDF10021B93C /* iOS */,
+				943A66201BADF2F20060E8CD /* tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		943A661F1BADF2F20060E8CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943A66361BADF3440060E8CD /* SharedAssets.xcassets in Resources */,
+				943A66341BADF3440060E8CD /* GameScene.sks in Resources */,
+				943A662F1BADF2F20060E8CD /* Assets.xcassets in Resources */,
+				943A662D1BADF2F20060E8CD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		944083EF1BADEDF10021B93C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,6 +226,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		943A661D1BADF2F20060E8CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943A66281BADF2F20060E8CD /* GameViewController.swift in Sources */,
+				943A66351BADF3440060E8CD /* GameScene.swift in Sources */,
+				943A66241BADF2F20060E8CD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		944083ED1BADEDF10021B93C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,6 +249,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		943A662B1BADF2F20060E8CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				943A662C1BADF2F20060E8CD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		944083FB1BADEDF10021B93C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -192,6 +276,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		943A66321BADF2F20060E8CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okrobotstudios.Diorama;
+				PRODUCT_NAME = Diorama;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		943A66331BADF2F20060E8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okrobotstudios.Diorama;
+				PRODUCT_NAME = Diorama;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		944084051BADEDF10021B93C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -302,7 +416,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		944084041BADEDF10021B93C /* Build configuration list for PBXNativeTarget "ios" */ = {
+		943A66311BADF2F20060E8CD /* Build configuration list for PBXNativeTarget "tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943A66321BADF2F20060E8CD /* Debug */,
+				943A66331BADF2F20060E8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		944084041BADEDF10021B93C /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				944084051BADEDF10021B93C /* Debug */,

@@ -14,19 +14,13 @@ class GameScene: SKScene {
         /* Setup your scene here */
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(texture: stickTexture)
-            sprite.position = location
-            self.addChild(sprite)
-        }
-    }
-   
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+    }
+
+    func tapped(location: CGPoint) {
+        let sprite = SKSpriteNode(texture: stickTexture)
+        sprite.position = location
+        self.addChild(sprite)
     }
 }

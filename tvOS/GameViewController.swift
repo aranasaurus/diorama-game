@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  diorama
+//  Diorama
 //
-//  Created by Ryan Arana on 8/25/15.
+//  Created by Ryan Arana on 9/19/15.
 //  Copyright (c) 2015 OK, Robot Studios. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ import SpriteKit
 class GameViewController: UIViewController {
 
     var scene: GameScene!
+    var lastTouchLocation = CGPoint.zero
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,31 +31,16 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
     }
 
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .Landscape
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        lastTouchLocation = touches.first?.locationInNode(scene) ?? CGPoint(x: scene.size.width/2.0, y: scene.size.height/2.0)
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-        for touch in touches {
-            let location = touch.locationInNode(scene)
-
-            scene.tapped(location)
-        }
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        scene.tapped(lastTouchLocation)
     }
-
 }
