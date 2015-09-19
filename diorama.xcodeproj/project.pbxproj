@@ -23,6 +23,13 @@
 		944084081BADEF050021B93C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9487F4AE1B8D770F00EB9459 /* GameScene.swift */; };
 		944084241BADEF690021B93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9440841B1BADEF4C0021B93C /* Assets.xcassets */; };
 		944084261BADF0110021B93C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 944084251BADF0110021B93C /* Info.plist */; };
+		94D63FB91BAE1F41000F694F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D63FB81BAE1F41000F694F /* AppDelegate.swift */; };
+		94D63FBB1BAE1F41000F694F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D63FBA1BAE1F41000F694F /* ViewController.swift */; };
+		94D63FBD1BAE1F41000F694F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D63FBC1BAE1F41000F694F /* Assets.xcassets */; };
+		94D63FC01BAE1F41000F694F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D63FBE1BAE1F41000F694F /* Main.storyboard */; };
+		94D63FC51BAE245B000F694F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9487F4AC1B8D770F00EB9459 /* GameScene.sks */; };
+		94D63FC61BAE245B000F694F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9487F4AE1B8D770F00EB9459 /* GameScene.swift */; };
+		94D63FC71BAE245B000F694F /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943A661B1BADF1B30060E8CD /* SharedAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,12 @@
 		944084251BADF0110021B93C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9487F4AC1B8D770F00EB9459 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		9487F4AE1B8D770F00EB9459 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		94D63FB61BAE1F41000F694F /* Diorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D63FB81BAE1F41000F694F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94D63FBA1BAE1F41000F694F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94D63FBC1BAE1F41000F694F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94D63FBF1BAE1F41000F694F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94D63FC11BAE1F41000F694F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +66,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		944083EE1BADEDF10021B93C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D63FB31BAE1F41000F694F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,7 +103,7 @@
 			path = shared;
 			sourceTree = "<group>";
 		};
-		944083F21BADEDF10021B93C /* ios */ = {
+		944083F21BADEDF10021B93C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				944084251BADF0110021B93C /* Info.plist */,
@@ -93,6 +113,7 @@
 				944083FB1BADEDF10021B93C /* Main.storyboard */,
 				944084001BADEDF10021B93C /* LaunchScreen.storyboard */,
 			);
+			name = iOS;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -100,8 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				944083EC1BADEB790021B93C /* shared */,
-				944083F21BADEDF10021B93C /* ios */,
+				944083F21BADEDF10021B93C /* iOS */,
 				943A66221BADF2F20060E8CD /* tvOS */,
+				94D63FB71BAE1F41000F694F /* macOS */,
 				9487F4A81B8D770F00EB9459 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +133,7 @@
 			children = (
 				944083F11BADEDF10021B93C /* Diorama.app */,
 				943A66211BADF2F20060E8CD /* Diorama.app */,
+				94D63FB61BAE1F41000F694F /* Diorama.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +145,18 @@
 				9487F4AE1B8D770F00EB9459 /* GameScene.swift */,
 			);
 			path = scenes;
+			sourceTree = "<group>";
+		};
+		94D63FB71BAE1F41000F694F /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				94D63FB81BAE1F41000F694F /* AppDelegate.swift */,
+				94D63FBA1BAE1F41000F694F /* ViewController.swift */,
+				94D63FBC1BAE1F41000F694F /* Assets.xcassets */,
+				94D63FBE1BAE1F41000F694F /* Main.storyboard */,
+				94D63FC11BAE1F41000F694F /* Info.plist */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +196,23 @@
 			productReference = 944083F11BADEDF10021B93C /* Diorama.app */;
 			productType = "com.apple.product-type.application";
 		};
+		94D63FB51BAE1F41000F694F /* macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D63FC41BAE1F41000F694F /* Build configuration list for PBXNativeTarget "macOS" */;
+			buildPhases = (
+				94D63FB21BAE1F41000F694F /* Sources */,
+				94D63FB31BAE1F41000F694F /* Frameworks */,
+				94D63FB41BAE1F41000F694F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macOS;
+			productName = Diorama;
+			productReference = 94D63FB61BAE1F41000F694F /* Diorama.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,6 +227,9 @@
 						CreatedOnToolsVersion = 7.1;
 					};
 					944083F01BADEDF10021B93C = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					94D63FB51BAE1F41000F694F = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -194,6 +249,7 @@
 			targets = (
 				944083F01BADEDF10021B93C /* iOS */,
 				943A66201BADF2F20060E8CD /* tvOS */,
+				94D63FB51BAE1F41000F694F /* macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +279,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94D63FB41BAE1F41000F694F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D63FBD1BAE1F41000F694F /* Assets.xcassets in Resources */,
+				94D63FC51BAE245B000F694F /* GameScene.sks in Resources */,
+				94D63FC01BAE1F41000F694F /* Main.storyboard in Resources */,
+				94D63FC71BAE245B000F694F /* SharedAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,6 +310,16 @@
 				944084081BADEF050021B93C /* GameScene.swift in Sources */,
 				944083FA1BADEDF10021B93C /* GameViewController.swift in Sources */,
 				944083F41BADEDF10021B93C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D63FB21BAE1F41000F694F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D63FC61BAE245B000F694F /* GameScene.swift in Sources */,
+				94D63FBB1BAE1F41000F694F /* ViewController.swift in Sources */,
+				94D63FB91BAE1F41000F694F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +348,14 @@
 				944084011BADEDF10021B93C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		94D63FBE1BAE1F41000F694F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D63FBF1BAE1F41000F694F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -413,6 +498,37 @@
 			};
 			name = Release;
 		};
+		94D63FC21BAE1F41000F694F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.okrobotstudios.Diorama;
+				PRODUCT_NAME = Diorama;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		94D63FC31BAE1F41000F694F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.okrobotstudios.Diorama;
+				PRODUCT_NAME = Diorama;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -423,6 +539,7 @@
 				943A66331BADF2F20060E8CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		944084041BADEDF10021B93C /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +558,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		94D63FC41BAE1F41000F694F /* Build configuration list for PBXNativeTarget "macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D63FC21BAE1F41000F694F /* Debug */,
+				94D63FC31BAE1F41000F694F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
