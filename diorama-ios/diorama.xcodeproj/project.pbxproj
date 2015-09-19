@@ -15,8 +15,8 @@
 		9487F4B61B8D770F00EB9459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9487F4B51B8D770F00EB9459 /* Assets.xcassets */; };
 		9487F4B91B8D770F00EB9459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9487F4B71B8D770F00EB9459 /* LaunchScreen.storyboard */; };
 		9487F4C41B8D770F00EB9459 /* dioramaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9487F4C31B8D770F00EB9459 /* dioramaTests.swift */; };
-		94998EE11B9369A90094C0DB /* rswift in Resources */ = {isa = PBXBuildFile; fileRef = 94998EE01B9369A90094C0DB /* rswift */; settings = {ASSET_TAGS = (); }; };
-		94998EE41B9370310094C0DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94998EE31B9370310094C0DB /* R.generated.swift */; settings = {ASSET_TAGS = (); }; };
+		94998EE11B9369A90094C0DB /* rswift in Resources */ = {isa = PBXBuildFile; fileRef = 94998EE01B9369A90094C0DB /* rswift */; };
+		94998EE41B9370310094C0DB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94998EE31B9370310094C0DB /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +170,7 @@
 		9487F49F1B8D770F00EB9459 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "OK, Robot Studios";
 				TargetAttributes = {
