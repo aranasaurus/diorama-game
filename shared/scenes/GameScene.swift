@@ -9,18 +9,21 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    let stickTexture = SKTexture(imageNamed: "stick")
+    var stick: Stick? {
+        return childNodeWithName("stick") as? Stick
+    }
+
     override func didMoveToView(view: SKView) {
+        #if DEBUG
+            view.showsFPS = true
+            view.showsNodeCount = true
+            view.ignoresSiblingOrder = true
+        #endif
+
         /* Setup your scene here */
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-    }
-
-    func tapped(location: CGPoint) {
-        let sprite = SKSpriteNode(texture: stickTexture)
-        sprite.position = location
-        self.addChild(sprite)
     }
 }

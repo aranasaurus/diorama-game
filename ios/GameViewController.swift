@@ -16,17 +16,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         scene = GameScene(fileNamed: "GameScene")
-        // Configure the view.
+        scene.scaleMode = .AspectFit
+
         let skView = self.view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        
-        /* Sprite Kit applies additional optimizations to improve rendering performance */
-        skView.ignoresSiblingOrder = true
-        
-        /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
-        
         skView.presentScene(scene)
     }
 
@@ -38,23 +30,8 @@ class GameViewController: UIViewController {
         return .Landscape
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
-
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-        for touch in touches {
-            let location = touch.locationInNode(scene)
-
-            scene.tapped(location)
-        }
     }
 
 }

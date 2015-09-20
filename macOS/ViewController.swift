@@ -9,7 +9,7 @@
 import Cocoa
 import SpriteKit
 
-class ViewController: NSViewController, GameViewDelegate {
+class ViewController: NSViewController {
 
     var scene: GameScene!
     override func viewDidLoad() {
@@ -17,33 +17,9 @@ class ViewController: NSViewController, GameViewDelegate {
 
         // Do any additional setup after loading the view.
         scene = GameScene(fileNamed: "GameScene")
-        scene.scaleMode = .AspectFill
+        scene.scaleMode = .AspectFit
 
-        let skView = self.view as! GameView
-        skView.delegate = self
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
+        let skView = self.view as! SKView
         skView.presentScene(scene)
     }
-
-    override func mouseDown(event: NSEvent) {
-        scene.tapped(event.locationInNode(scene))
-    }
 }
-
-/*
- * Apparently SKView eats up all the mouse events, so this delegate protocol and SKView subclass fix that :P
- */
-protocol GameViewDelegate {
-    func mouseDown(theEvent: NSEvent)
-}
-
-class GameView: SKView {
-    var delegate: GameViewDelegate?
-    override func mouseDown(theEvent: NSEvent) {
-        super.mouseDown(theEvent)
-        delegate?.mouseDown(theEvent)
-    }
-}
-
