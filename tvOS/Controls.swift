@@ -10,29 +10,26 @@ import SpriteKit
 
 extension GameScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        stick?.grabbedLocation = stick?.okr_convertUnitPointToAnchoredPoint(CGPoint(x: 0.5, y: 0.2))
+        guard let touch = touches.first else { return }
+        // pass the event straight to stick rather than going through GameScene's implementation
+        // because we don't actually want to check that the touch is within our bounds as the
+        // default implementation does.
+        stick?.beginInput(TouchEvent(touch, originatingNode: self))
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard
-            let stick = stick,
-            let _ = stick.grabbedLocation,
-            let touch = touches.first
-            else { return }
-
-        stick.position = stick.position + (touch.locationInNode(self) - touch.previousLocationInNode(self))
+        guard let touch = touches.first else { return }
+        handleInput(TouchEvent(touch, originatingNode: self))
     }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard let stick = stick else { return }
-
-        stick.grabbedLocation = nil
+        guard let touch = touches.first else { return }
+        endInput(TouchEvent(touch, originatingNode: self))
     }
 
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        guard let stick = stick else { return }
-
-        stick.grabbedLocation = nil
+        guard let touch = touches?.first else { return }
+        endInput(TouchEvent(touch, originatingNode: self))
     }
 }
 

@@ -10,18 +10,15 @@ import SpriteKit
 
 extension GameScene {
     override func mouseDown(event: NSEvent) {
-        guard let stick = stick where stick.containsPoint(event.locationInNode(self)) else { return }
-
-        stick.grabbedLocation = event.locationInNode(stick)
+        beginInput(MouseEvent(event))
     }
 
     override func mouseDragged(event: NSEvent) {
-        guard let stick = stick where stick.grabbedLocation != nil else { return }
-
-        stick.position = event.locationInNode(self)
+        handleInput(MouseEvent(event))
     }
 
     override func mouseUp(event: NSEvent) {
-        stick?.grabbedLocation = nil
+        endInput(MouseEvent(event))
     }
 }
+

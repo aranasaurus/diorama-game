@@ -27,3 +27,19 @@ class GameScene: SKScene {
         /* Called before each frame is rendered */
     }
 }
+
+extension GameScene: InputHandlerType {
+    func beginInput(event: InputEventType) {
+        guard let stick = stick where stick.containsPoint(event.locationInNode(self)) else { return }
+        stick.beginInput(event)
+    }
+
+    func handleInput(event: InputEventType) {
+        stick?.handleInput(event)
+    }
+
+    func endInput(event: InputEventType) {
+        stick?.endInput(event)
+    }
+}
+
